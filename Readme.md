@@ -19,7 +19,7 @@ The Photo Roster is a LTI tool in Canvas that allows instructors to view photos 
 - EduAppCenter
 - CSV file mapping Section(SIS ID) and Instructor(SIS ID)
 ## Integration
-- Generate a csv in the specified format containing SIS ID's of Section and their Instructor of record.
+- Generate a csv in the specified format containing SIS ID’s of the course’s students and the instructor of record.
 - Deploy the application on your school's server. You can follow this [guide][2]
 - Install the application on your own instance of EduAppCenter or use our default configured settings [here][3]. 
 - Generate Developer Keys and Admin access token for the LTI by following steps [here][4] and [here][5].
@@ -40,12 +40,12 @@ Demo video (coming soon)
 
 
 ## Contact Us
-Learning and Teaching Center
-Northwest Missouri State University
-800 University Drive
-Maryville, MO - 64468
+Learning and Teaching Center  
+Northwest Missouri State University  
+800 University Drive  
+Maryville, MO - 64468  
 
-Email: [ltcite@nwmissouri.edu](ltcite@nwmissouri.edu)
+Email: [ltcite@nwmissouri.edu](ltcite@nwmissouri.edu)  
 Phone: (660) 562-1532
 
 [1]: https://canvas.instructure.com/
