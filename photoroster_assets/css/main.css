@@ -1,0 +1,58 @@
+body {
+margin: 0px 5px 0px 5px;
+height: 100%;
+}
+
+.dhn-info {
+    width: 100%;
+    display: inline-block;
+}
+
+.dhn-info .dhn-text p {
+    font-family: arial;
+    font-size: 15px;
+    margin: 0;
+    display: block;
+	float: left;
+}
+
+p { 
+	margin:0; 
+}
+
+
+.btn-group-lg>.btn, .btn-lg {
+	padding: 7px 7px !important;
+}	
+
+#loading {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    background-color: #666;opacity: 0.4;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#loadingImage {
+	max-width: 99%;
+    max-height: 99%;
+}
+
+.container {
+width: 100%;
+padding: 0px;
+margin: 0px;
+}
+
+.containerDialog {
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}

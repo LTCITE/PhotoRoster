@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Photo Roster</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/photoroster_assets/css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/photoroster_assets/js/main.js"></script>
+
+</head>
+
+<body>
+    <div id="loading" style="display:none">
+        <p><img id="loadingImage" src="/photoroster_assets/img/loading.gif" /> Please Wait</p>
+    </div>
+    <div class="container">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h2>Photo Roster</h2>
+            <p>Total Students:
+                <%=studentRecords.length%>
+            </p>
+            <ul class="nav nav-tabs">
+                <% if (sections) {%>
+                    <div id="currentSection" style="display:none">
+                        <%=currentSection%>
+                    </div>
+
+                    <% sections.forEach(function(section) {%>
+                        <div id="courseNumber_<%=section.id%>" style="display:none;">
+                            <%=section.sis_section_id%>
+                        </div>
+
+                        <li id="navId<%=section.id%>">
+                            <a href="/photoroster/index/section/<%=section.id%>">
+                                <%=section.sis_section_id.substr(0,8)%>
+                            </a>
+                        </li>
+                        <%});%>
+                            <% } %>
+
+
+            </ul>
+            <% courseDetailArray.forEach(function(course) {%>
+                <p id='courseName' style="display:none">
+                    <%=course.name%>
+                </p>
+                <p id='courseTerm' style="display:none">
+                    <%=course.term%>
+                </p>
+                <p id='courseID' style="display:none">
+                    <%=course.sis_course_id%>
+                </p>
+                <%});%>
+                    <a onclick="printPDF()" class="btn btn-primary pull-right btn-lg" style="margin-right: 20px;">Download</a>
+                    <a id="downloadPDFButton" style="display:none">hello</a>
+                    <br>
+                    <br>
+                    <div style="height:600px;overflow:auto;" id="printable">
+                        <table id="myTable" class="table table-hover table-bordered ">
+
+                            <tbody>
+                                <%var count = 0;%>
+                                    <%for (var record = 0;record < studentRecords.length;record++){%>
+                                        <tr>
+                                            <td>
+                                                <div class="dhn-info">
+                                                    <div class="dhn-img">
+                                                        <img class="avatar" src="<%=studentRecords[record].avatar_url%>" alt="" id="img_<%=count%>" style="display: block;height: 150px;width: 150px;"
+                                                        />
+                                                    </div>
+                                                    <div class="dhn-text">
+                                                        <p>Name:<span class="nameClass"> <%= studentRecords[record].name %></span></p>
+                                                        <p id='sectionID' style="display:none">
+                                                            <%=studentRecords[record].sis_section_id.substr(0,8)%>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <%count++;%>
+                                                <%record++;%>
+                                                    <%if(locals.studentRecords[record]) {%>
+                                                        <td>
+                                                            <div class="dhn-info">
+                                                                <div class="dhn-img">
+                                                                    <img class="avatar" src="<%=studentRecords[record].avatar_url%>" alt="" id="img_<%=count%>" style="display: block;height: 150px;width: 150px;"
+                                                                    />
+                                                                </div>
+                                                                <div class="dhn-text">
+                                                                    <p>Name:<span class="nameClass"> <%= studentRecords[record].name %></span></p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <%} else {%>
+                                                            <td></td>
+                                                            <%}%>
+                                                                <%count++;%>
+                                                                    <%record++;%>
+                                                                        <%if(locals.studentRecords[record]) {%>
+                                                                            <td>
+                                                                                <div class="dhn-info">
+                                                                                    <div class="dhn-img">
+                                                                                        <img class="avatar" src="<%=studentRecords[record].avatar_url%>" alt="" id="img_<%=count%>" style="display: block;height: 150px;width: 150px;"
+                                                                                        />
+                                                                                    </div>
+                                                                                    <div class="dhn-text">
+                                                                                        <p>Name:<span class="nameClass"> <%= studentRecords[record].name %></span></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <%} else {%>
+                                                                                <td></td>
+                                                                                <%}%>
+                                                                                    <%count++;%>
+                                                                                        <%record++;%>
+                                                                                            <%if(locals.studentRecords[record]) {%>
+                                                                                                <td>
+                                                                                                    <div class="dhn-info">
+                                                                                                        <div class="dhn-img">
+                                                                                                            <img class="avatar" src="<%=studentRecords[record].avatar_url%>" alt="" id="img_<%=count%>" style="display: block;height: 150px;width: 150px;"
+                                                                                                            />
+                                                                                                        </div>
+                                                                                                        <div class="dhn-text">
+                                                                                                            <p>Name:<span class="nameClass"> <%= studentRecords[record].name %></span></p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <%} else {%>
+                                                                                                    <td></td>
+                                                                                                    <%}%>
+                                                                                                        <%count++;%>
+                                                                                                            <%record++;%>
+                                                                                                                <%if(locals.studentRecords[record]) {%>
+                                                                                                                    <td>
+                                                                                                                        <div class="dhn-info">
+                                                                                                                            <div class="dhn-img">
+                                                                                                                                <img class="avatar" src="<%=studentRecords[record].avatar_url%>" alt="" id="img_<%=count%>" style="display: block;height: 150px;width: 150px;"
+                                                                                                                                />
+                                                                                                                            </div>
+                                                                                                                            <div class="dhn-text">
+                                                                                                                                <p>Name:<span
+                                                                                                                                        class="nameClass"> <%= studentRecords[record].name %> </span></p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </td>
+                                                                                                                    <%} else {%>
+                                                                                                                        <td></td>
+                                                                                                                        <%}%>
+                                        </tr>
+                                        <%count++;%>
+                                            <% }%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- to make it scrolable -->
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- main div -->
+</body>
+
+</html>
