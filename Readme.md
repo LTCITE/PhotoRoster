@@ -1,5 +1,5 @@
 
-Photo Roster
+# Photo Roster
 -------------
 
 1. [Introduction](#introduction)
@@ -14,7 +14,7 @@ Photo Roster
 
 The Photo Roster is a LTI tool in Canvas that allows instructors to view photos of students of their sections and to export the roster. This tool appears in the course navigation menu of all registrar-based classes, and is not visible to students. Because university photos are protected under the federal Family Educational Rights and Privacy Act (FERPA), only instructors of record are authorized to view the roster. 
 
-##Requirements
+## Requirements
 - Canvas
 - EduAppCenter
 - CSV file mapping Section(SIS ID) and Instructor(SIS ID)
@@ -27,20 +27,19 @@ The Photo Roster is a LTI tool in Canvas that allows instructors to view photos 
 - Install the LTI on your instance of Canvas by following steps [here][6].
 
 > **Note:**
-
 > - Server must be secure in order for the LTI to work.
 > - You can customize error page according to your needs.
 > - We are using external csv to map Sections with their Instructors as that information might not be latest on the Canvas.
 > - You might need to make some changes in the authentication.js file inorder to match SIS ID mapping as per your institution.
 
-##Usage
+## Usage
 #### Initialization
 Demo video (coming soon)
 #### Maintenance
 - You need to update the CSV file mapping Section(SIS ID) and Instructor(SIS ID) every term.
 
 
-##Contact Us
+## Contact Us
 Learning and Teaching Center
 Northwest Missouri State University
 800 University Drive
